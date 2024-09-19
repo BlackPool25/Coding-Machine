@@ -13,15 +13,16 @@ def main():
     num = []
     result = []
     try:
-        num.extend(map(int, input("Enter the nums: ").strip().split()))
+        num.extend(map(int, input("Enter the nums: ").strip().split(",")))
         target = int(input("Enter the target number: "))
         for i in num:
             for j in num:
-                if [num.index(i),num.index(j)] in num or [num.index(j),num.index(i)] in result:
-                    continue
-                elif i+j == target:
-                    result.append([num.index(i), num.index(j)])
-        print(f"The result list is {[ele for ele in result]}")
+                if i+j == target:
+                    if [num.index(i), num.index(j)] or [num.index(j), num.index(i)] not in result:
+                        result.append([num.index(i), num.index(j)])
+
+            
+        print(f"The result list is {result[0]}")
     except (ValueError, KeyboardInterrupt):
         sys.exit()
 
