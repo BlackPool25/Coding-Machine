@@ -19,8 +19,23 @@ int main(){
 
 
 int is_rotationally_same(char char_t[]){
+    int is_allowed[] = {'1', '8', '6', '9', '0'};
     char to_rotate_t[20] = "";
     int length = strlen(char_t);
+
+    for(int i=0;i<strlen(char_t);i++){
+        char digit = char_t[i];
+        int found = 0;
+        for(int j=0;j<5; j++){
+            if (digit == is_allowed[j]){
+                found = 1;
+                break;
+            }
+        }
+        if(!found){
+            return 0;
+        }
+    }
 
     for(int i=0;i<length;i++){
         if(char_t[i] == '6'){
