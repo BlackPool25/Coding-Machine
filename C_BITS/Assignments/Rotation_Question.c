@@ -6,10 +6,17 @@ int is_rotationally_same(char char_t[]);
 
 
 int main(){
-    char user_inp[20];
+    int user_inp;
+    char char_user_inp[20];
+
     printf("Enter the number to be checked: ");
-    scanf("%s", &user_inp);
-    if(is_rotationally_same(user_inp)){
+    if(scanf("%d", &user_inp) != 1){
+        printf("Invalid input.");
+        return 0;
+    }
+    sprintf(char_user_inp, "%d", user_inp);
+
+    if(is_rotationally_same(char_user_inp)){
         printf("Yes, the number reads the same upside-down.");
     }
     else{
