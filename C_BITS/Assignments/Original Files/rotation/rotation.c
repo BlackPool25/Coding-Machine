@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdbool.h>
 
-bool is_rotationally_same(int num){
-    char char_t[20]; 
-    sprintf(char_t, "%d", num);
+int is_rotationally_same(char char_t[]){
     int is_allowed[] = {'1', '8', '6', '9', '0'};
     char to_rotate_t[20] = "";
     int length = strlen(char_t);
@@ -18,7 +14,7 @@ bool is_rotationally_same(int num){
             }
         }
         if(!found){
-            return false;
+            return 0;
         }
     }
 
@@ -39,13 +35,11 @@ bool is_rotationally_same(int num){
         strcat(rotated_t, (char[]){to_rotate_t[i], '\0'});
     }
 
-    printf("%d and %d", atoi(char_t), atoi(rotated_t));
-    if(atoi(char_t) == atoi(rotated_t)){
-        return true;
-    }
     
+    if(atoi(char_t) == atoi(rotated_t)){
+        return 1;
+    }
     else{
-        // printf("%d and %d", atoi(char_t), atoi(rotated_t));
-        return false;
+        return 0;
     }
 }
