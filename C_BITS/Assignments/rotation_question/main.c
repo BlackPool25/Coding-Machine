@@ -3,9 +3,6 @@
 #include<string.h>
 #include "rotation_question.c"
 
-int is_rotationally_same(char char_t[]);
-
-
 int main(){
     int user_inp;
     char char_user_inp[20];

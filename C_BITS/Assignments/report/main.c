@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include "report.c"
 
-char report(int marks);
-
 int main(){
     int marks;
     printf("Enter the marks of the student (0-100): ");
