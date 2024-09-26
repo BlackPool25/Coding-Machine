@@ -39,13 +39,11 @@ bool is_rotationally_same(int num){
         strcat(rotated_t, (char[]){to_rotate_t[i], '\0'});
     }
 
-    printf("%d and %d", atoi(char_t), atoi(rotated_t));
     if(atoi(char_t) == atoi(rotated_t)){
         return true;
     }
     
     else{
-        // printf("%d and %d", atoi(char_t), atoi(rotated_t));
         return false;
     }
 }
