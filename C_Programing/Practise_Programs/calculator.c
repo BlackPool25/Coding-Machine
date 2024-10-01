@@ -17,28 +17,25 @@ int main(){
     switch(operator){
         case '+':
         result = num1 + num2;
-        printf("\nThe sum of %lf and %lf is %lf",num1 , num2, result);
         break;
 
         case '-':
         result = num1 - num2;
-        printf("\nThe difference of %lf and %lf is %lf",num1 , num2, result);
         break;
 
         case '*':
         result = num1 * num2;
-        printf("\nThe product of %lf and %lf is %lf",num1 , num2, result);
         break;
 
         case '/':
         result = num1 / num2;
-        printf("\nThe quotient of %lf and %lf is %lf",num1 , num2, result);
         break;
 
 
         default:
         printf("\nInvalid Operator.");
+        return 0;
     }
-
+    printf("%lf %c %lf = %lf\n", num1, operator, num2, result);
     return 0;
 }
