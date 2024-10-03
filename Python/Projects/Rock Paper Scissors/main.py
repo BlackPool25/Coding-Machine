@@ -12,7 +12,7 @@ def clear():
 
 
 def choice():
-    choices_list = ['Rock', 'Paper', 'Scissors']
+    choices_list = ['Rock', 'Paper', 'Scissor']
     return random.choice(choices_list)
 
 
@@ -55,7 +55,7 @@ def game():
 
     print(f"Your choice is {user_choice}")
     print(f"The computer's choice is {computer_choice}")
-    print(print_choice(user_choice) + vs_logo + print_choice(computer_choice))
+    print(print_choice(user_choice) + art.vs_logo + print_choice(computer_choice))
     
     if result(computer_choice, user_choice) == "Win":
         print("You Win!")
@@ -63,18 +63,6 @@ def game():
         print("It's a draw.")
     else:
         print("You lose!")
-
-
-vs_logo = """
- ___      ___  ________  
-|"  \    /"  |/"       ) 
- \   \  //  /(:   \___/  
-  \\  \/. ./  \___  \    
-   \.    //    __/  \\   
-    \\   /    /" \   :)  
-     \__/    (_______/   
-                         
-"""
 
 
 def main():
