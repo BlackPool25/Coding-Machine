@@ -28,7 +28,7 @@ def result(cmp_ch, us_ch):
 def get_input():
     try:
         us_ch = int(input("What is your choice [Rock(1) or Paper(2) or Scissor(3)]: ").strip())
-    except TypeError:
+    except ValueError:
         sys.exit("Incorrect input")
     if us_ch == 1:
         return "Rock"

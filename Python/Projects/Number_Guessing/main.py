@@ -17,7 +17,7 @@ def game():
     while True:
         try:
             user_guess = int(input("Guess a number between 1 and 100: "))
-        except TypeError:
+        except (ValueError, TypeError):
             exit("Incorrect input.")
         if user_guess < guess_num:
             print(art.higher)
