@@ -32,8 +32,9 @@ class Boy(Human, Male):
 
 def main():
     boy1 = Boy()
-    boy1.work()
-    print(boy1.num_eyes)
+    print(Boy.mro())
+    Male.work(boy1)
+    
 
 
 if __name__ == "__main__":
