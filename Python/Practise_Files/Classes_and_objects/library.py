@@ -1,3 +1,5 @@
+import sys
+
 class Library:
     def __init__(self, location, size, filled = 0) -> None:
         self.location = location
@@ -25,16 +27,18 @@ class Library:
         for book in self.books:
             print(f"- {book}")
 
+
 def main():    
     
     shelf1 = Library("Ground Floor", 30)
 
     while True:
 
-        options = [1,2,3]
+        options = [1, 2, 3, 4]
         print("1. Add Book")
         print("2. Remove Book")
         print("3. Display Shelf")
+        print("4. Exit")
 
         try:
             choice = int(input("Enter your choice: "))
@@ -56,7 +60,10 @@ def main():
 
             case 3:
                 shelf1.display()
-            
+
+            case 4:
+                print("This was the final library.")
+                sys.exit(shelf1.display())
         if input("Continue (y or n): ").strip().lower() == "n":
             break
     
