@@ -1,5 +1,5 @@
 # Ignore the .idea directory (JetBrains IDE)
-.idea/
+#.idea/
 
 # Ignore the virtual environment directory
 .venv/
