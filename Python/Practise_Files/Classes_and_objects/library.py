@@ -63,9 +63,9 @@ def main():
 
             case 4:
                 print("This was the final library.")
-                sys.exit(shelf1.display())
-        if input("Continue (y or n): ").strip().lower() == "n":
-            break
+                shelf1.display()
+                break
+        
     
 
 if __name__ == "__main__":
