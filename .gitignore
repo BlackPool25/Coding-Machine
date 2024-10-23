@@ -1,0 +1,17 @@
+# Ignore the .idea directory (JetBrains IDE)
+.idea/
+
+# Ignore the virtual environment directory
+.venv/
+
+# Ignore the VS Code settings directory
+.vscode/
+
+# Ignore all .pyc files (compiled Python files)
+*.pyc
+
+# Ignore log files
+*.log
+
+# Ignore any file named secret.txt
+secret.txt
