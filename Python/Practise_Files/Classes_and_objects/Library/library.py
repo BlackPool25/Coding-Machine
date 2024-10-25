@@ -1,31 +1,5 @@
 import sys
-
-class Library:
-    def __init__(self, location, size, filled = 0) -> None:
-        self.location = location
-        self.size = size
-        self.filled = filled
-        self.books = set()
-    
-
-    def add_book(self, book_name):
-        if self.filled == self.size:
-            raise BufferError("Library is full, cannot add more books.")
-        self.books.add(book_name)
-        self.filled += 1
-    
-
-    def remove_book(self, book_name):
-        if book_name in self.books:
-            self.books.discard(book_name)
-            self.filled -= 1
-        
-
-    
-    def display(self):
-        print(f"Books in the library ({self.filled}/{self.size}): ")
-        for book in self.books:
-            print(f"- {book}")
+from Library_class import Library
 
 
 def main():    
@@ -53,10 +27,10 @@ def main():
 
         match choice:
             case 1:
-                shelf1.add_book(input("Enter the name of the book: "))
+                shelf1.add_book(input("Enter the name of the book: ").strip().title())
             
             case 2:
-                shelf1.remove_book(input("Enter the name of the book: "))
+                shelf1.remove_book(input("Enter the name of the book: ").strip().title())
 
             case 3:
                 shelf1.display()
