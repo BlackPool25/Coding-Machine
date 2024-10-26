@@ -2,10 +2,7 @@ import sys
 from Library_class import Library
 
 
-def main():    
-    
-    shelf1 = Library("Ground Floor", 30)
-
+def manage_library(shelf):
     while True:
 
         options = [1, 2, 3, 4]
@@ -27,18 +24,25 @@ def main():
 
         match choice:
             case 1:
-                shelf1.add_book(input("Enter the name of the book: ").strip().title())
+                shelf.add_book(input("Enter the name of the book: ").strip().title())
             
             case 2:
-                shelf1.remove_book(input("Enter the name of the book: ").strip().title())
+                shelf.remove_book(input("Enter the name of the book: ").strip().title())
 
             case 3:
-                shelf1.display()
+                shelf.display()
 
             case 4:
                 print("This was the final library.")
-                shelf1.display()
+                shelf.display()
                 break
+
+
+def main():    
+    shelf1 = Library("Ground Floor", 30)
+    manage_library(shelf1)
+
+    
         
     
 

@@ -1,10 +1,16 @@
 #include<stdio.h>
 
+double square(double x){
+    double result = x * x;
+    return result;
+}
+
+
 int main(){
-    float side, area;
-    printf("What is the length of the side: ");
-    scanf("%f", &side);
-    area = side*side;
-    printf("The area of the square is: %f \n", area);
+    double num, result;
+    printf("Enter a number: ");
+    scanf("%lf", &num);
+    result = square(num);
+    printf("The square of the number is %.2lf\n", result);
     return 0;
 }

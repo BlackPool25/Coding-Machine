@@ -1,11 +1,9 @@
+//Print Hello world
+//8 bits = 1 byte
+//1024 bytes = MB
+//1024 MB = 1KB
 #include<stdio.h>
-
-int main()
-{
-    //This is a comment
-    /* 
-    This is a multi line comment
-    */
-    printf("\"I like Pizza\" - Abraham Lincoln probably");
+int main(){
+    printf("Hello World!");
     return 0;
 }
