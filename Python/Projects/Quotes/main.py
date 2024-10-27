@@ -3,8 +3,16 @@ from quote_api import QuoteAPI
 import os
 from dotenv import load_dotenv
 
+def clear():
+    if os.name == "nt":
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
 
 def main():
+    clear()
     load_dotenv(r"C:\Coding\.env")
     # Consider storing your API key securely
     api_key = os.getenv("API_NINJAS_KEY")
