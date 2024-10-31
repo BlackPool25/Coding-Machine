@@ -5,7 +5,7 @@
 .venv/
 
 # Ignore the environment directory
-.env/
+.env
 
 # Ignore the VS Code settings directory
 .vscode/

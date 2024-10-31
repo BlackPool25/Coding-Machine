@@ -1,13 +1,10 @@
 #include<stdio.h>
-#include<conio.h>
 
 int main(){
     int a,b;
-    printf("First Num: ");
-    scanf("%d", &a);
-    printf("Second Num: ");
-    scanf("%d", &b);
-    int res = a+b;
-    printf("%d", res);  
-}
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
 
+    printf("The result of %d+%d is %d\n",a , b,  a+b);
+    return 0;
+}
