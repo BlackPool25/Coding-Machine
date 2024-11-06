@@ -28,14 +28,6 @@ MENU = {
     }
 }
 
-drinks = ['espresso', 'latte', 'cappuccino']
-profit = 0
-is_on = True
-resources = {
-    "water": 300,
-    "milk" : 200,
-    "coffee" : 100
-}
 
 def print_report():
     print(f"Water : {resources["water"]} ml.")
@@ -66,11 +58,29 @@ def transaction_successful(payment, cost):
     if payment>=cost:
         change = round(payment-cost , 2)
         print(f"Here is your change ${change}.")
+        global profit
         profit += cost
         return True
     else:
         print("Sorry not enough money.")
         return False
+
+
+def make_drink(drink, drink_ingredients):
+    for ingredient in drink_ingredients:
+        resources[ingredient] -= drink_ingredients[ingredient]
+    print(f"Enjoy your ")
+
+
+
+profit = 0
+drinks = ['espresso', 'latte', 'cappuccino']
+is_on = True
+resources = {
+    "water": 300,
+    "milk" : 200,
+    "coffee" : 100
+}
 
 
 while is_on:
