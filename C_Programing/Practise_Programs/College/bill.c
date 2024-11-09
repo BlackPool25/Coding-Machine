@@ -13,9 +13,11 @@ int main(){
     if(units<=200){
         total_charge = units * 0.8;
     }
+
     else if(units<=300){
         total_charge = 200 * 0.8 + (units-200) * 0.9;
     }
+    
     else{
         total_charge = 200 * 0.8 + 100 * 0.9 + (units-300) * 1;
     }
