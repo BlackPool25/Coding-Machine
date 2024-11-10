@@ -1,1 +1,0 @@
-print([item for item in enumerate(["a", "b", "c"])])
