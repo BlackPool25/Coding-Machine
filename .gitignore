@@ -21,4 +21,5 @@ secret.txt
 
 # Ignore the .a.out files
 *.out
+*.exe
 
