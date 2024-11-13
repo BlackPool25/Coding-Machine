@@ -13,5 +13,5 @@ int main(){
     else{
         printf("The remainder is %d.\n", rem);
     }
-    return 0;
+    return 0;   
 }
