@@ -1,5 +1,7 @@
 import requests
 import os
+from search_art import logo
+
 
 def clear():
     if os.name == "nt":
@@ -41,5 +43,6 @@ def google_search(query, num_results=10):
 
 # Example usage
 clear()
+print(logo)
 search_term = input("Enter search query: ")
 google_search(search_term)
