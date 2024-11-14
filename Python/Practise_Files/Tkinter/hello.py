@@ -6,6 +6,6 @@ window.title("Bro Code first GUI Program")
 
 icon = tk.PhotoImage(file='image.png')
 window.iconphoto(True, icon)
-window.config(background="#B2BEB5")
+window.config(background="black")
 
 window.mainloop() #place window of computer screen
