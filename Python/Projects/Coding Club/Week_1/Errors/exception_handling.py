@@ -11,6 +11,6 @@ except ValueError:
     print("Enter only numbers please!")
 except Exception:
     print("Something went wrong!")
-    
+
 finally: # Always executes no matter if the block raises error or not
     print("Do some cleanup here")
