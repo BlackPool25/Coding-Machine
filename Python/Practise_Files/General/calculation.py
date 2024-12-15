@@ -1,6 +1,6 @@
 import pandas as pd
 import math
-import numpy as np
+import Python.Practise_Files.General.numpy_test as np
 
 # Constants
 mu_0 = 4 * math.pi * 1e-7  # T·m/A
