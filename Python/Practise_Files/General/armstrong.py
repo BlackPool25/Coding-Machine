@@ -17,9 +17,7 @@ def main():
         print("It is an armstrong number.")
     else:
         print("It is not an armstrong number.")
-    
-    hello = 0
 
-    
+
 if __name__ == "__main__":
     main()
