@@ -20,7 +20,8 @@ def init_tts():
         # Set properties (optional)
         voices = engine.getProperty('voices')
         engine.setProperty('voice', voices[0].id)  # Select voice index as needed
-        rate = engine getProperty('rate')  # Get the current speaking rate
+        
+        rate = engine.getProperty('rate')  # Get the current speaking rate
         print(f"Current rate: {rate}")  # Print current rate
         
         if not os.path.exists("output"):
@@ -31,31 +32,28 @@ def init_tts():
         print(f"Error initializing TTS: {e}")
         return None
 
-def convert_to_audio(text, engine, output_path="output/output.mp3"):
+def convert_to_audio(text, engine):
+    def on_post(event):
+        pass  # No action needed; we'll write directly
+    
     try:
-        # Initialize the text to speech engine with specific settings
-        if not engine:
-            print("TTS Engine is not initialized. Please check initialization.")
-            return
+        # Use async processing with callbacks (if supported by the speech engine)
+        if hasattr(engine, 'startLoop'):
+            for i, chunk in enumerate(text.split("\n\n")):  # Split into paragraphs
+                engine.say(chunk)
+                
+                # You can adjust how many chunks to process before waiting
+                if (i + 1) % 5 == 0:
+                    engine.runAndWait()
+                    
+        else:
+            # Fallback for engines that don't support async processing
+            engine.say(text)
+            engine.runAndWait()
             
-        # Save the speech to a file using async method and callback
-        def on_post(event):
-            pass  # No action needed; we'll write directly
-
-        sound =	engine.begin_audio()
-        
-        for i, chunk in enumerate(text.split("\n\n")):  # Split into paragraphs or adjust as per your needs
-            engine.say(chunk)
-            
-            if (i+1) % 5 ==0:
-                engine.runAndWait()  # Wait for a few sentences to be processed before moving on
-            
-        while not os.path.exists(output_path):
-            pass
-        
     except Exception as e:
         print(f"Error converting text to audio: {e}")
-        
+
 def main():
     pdf_input = input("Enter the path of your PDF file: ")
     
@@ -68,6 +66,10 @@ def main():
     if extracted_text:
         engine = init_tts()
         convert_to_audio(extracted_text, engine)
+    
 
 if __name__ == "__main__":
     main()
+
+# Make sure to stop the speech synthesis loop properly
+ # If you used startLoop in the code above
